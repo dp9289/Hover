@@ -1,0 +1,68 @@
+
+@font-face{
+    font-family: paralles;
+    src: url(PARALLELS.otf);
+    font-weight: 200;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: paralles;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: black;
+}
+.border{
+    position: relative;
+    width: 500px;
+    cursor: pointer;
+}
+.border h1{
+    color: rgba(41, 230, 57, 0.781);
+    text-transform: uppercase;
+    transition: all .5s;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.border:hover{
+    letter-spacing: 6px;
+    text-shadow: 4px 5px rgba(255, 0, 128, 0.705);
+}
+
+.border::before,
+.border::after{
+    content: "";
+    position: absolute;
+    top: 1.25em;
+    right: 1.25em;
+    bottom: 1.25em;
+    left: 1.25em;
+    transition: transform ease-out 250ms;
+}
+
+.border::before{
+    border-top: 2px solid rgb(130, 24, 230);
+    border-bottom: 2px solid rgb(130, 24, 230);
+    transform: scale(0,1);
+}
+
+.border::after{
+    border-right: 2px solid rgb(130, 24, 230);
+    border-left: 2px solid rgb(130, 24, 230);
+    transform: scale(1,0)
+}
+
+.border:hover::before{
+    transform: scale(1.05, 1);
+}
+
+.border:hover::after{
+    transform: scale(1, 1.05);
+}
